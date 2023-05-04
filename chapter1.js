@@ -167,3 +167,104 @@ function noSpace(x) {
 const areaOrPerimeter = function (l, w) {
   return l == w ? l * w : 2 * (l + w);
 };
+
+//The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour
+//and returns it in cm per second, rounded down to the integer (= floored).
+
+function cockroachSpeed(s) {
+  return Math.floor(s * 27.777777777778);
+}
+
+function cockroachSpeed(s) {
+  const secsInHour = 3600;
+  const centimetersInKilometers = 100000;
+  return Math.floor((s * centimetersInKilometers) / secsInHour);
+}
+
+//Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+function findNeedle(haystack) {
+  return `found the needle at position ${haystack.indexOf("needle")}`;
+}
+
+//Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+
+const quarterOf = (month) => {
+  if (month % 3 !== 0) {
+    return Math.floor(month / 3) + 1;
+  } else return month / 3;
+};
+
+const quarterOf2 = (m) => Math.ceil(m / 3);
+
+//hero and dragons
+
+function hero(bullets, dragons) {
+  return bullets / 2 >= dragons;
+}
+
+//Write a function that checks if a given string (case insensitive) is a palindrome. 
+
+function isPalindrome(x) {
+  x = x.toLowerCase();
+  return x.split("").reverse().join("") === x;
+}
+
+//Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+
+function fakeBin(x) {
+  return x
+    .split("")
+    .map((n) => (n < 5 ? 0 : 1))
+    .join("");
+}
+
+//Given a non-negative integer, 3 for example,
+// return a string with a murmur: "1 sheep...2 sheep...3 sheep..."
+
+var countSheep = function (num) {
+  let msg = "";
+  for (let i = 1; i <= num; i++) {
+    msg += `${i} sheep...`;
+  }
+  return msg;
+};
+
+//Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting
+//- if you have it in your database.
+//It should default to English if the language is not in the database, or in the event of an invalid input.
+
+var database = {
+  english: "Welcome",
+  czech: "Vitejte",
+  danish: "Velkomst",
+  dutch: "Welkom",
+  estonian: "Tere tulemast",
+  finnish: "Tervetuloa",
+  flemish: "Welgekomen",
+  french: "Bienvenue",
+  german: "Willkommen",
+  irish: "Failte",
+  italian: "Benvenuto",
+  latvian: "Gaidits",
+  lithuanian: "Laukiamas",
+  polish: "Witamy",
+  spanish: "Bienvenido",
+  swedish: "Valkommen",
+  welsh: "Croeso",
+};
+
+function greet(language) {
+  return database[language] || "Welcome";
+}
+
+
+//Create a function with two arguments that will return an array of the first n multiples of x.
+
+function countBy(x, n) {
+  var z = [];
+  for (i = 1; i <= n; i++) {
+    z.push(x * i);
+  }
+  return z;
+}
