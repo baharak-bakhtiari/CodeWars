@@ -441,3 +441,60 @@ function removeEveryOther(arr) {
 function twiceAsOld(dadYearsOld, sonYearsOld) {
   return Math.abs(dadYearsOld - sonYearsOld * 2);
 }
+
+/*--*/
+//Write a program that finds the summation of every number from 1 to num.
+//The number will always be a positive integer greater than 0.
+
+var summation = function (num) {
+  let result = 0;
+  for (i = 1; i <= num; i++) {
+    result += i;
+  }
+  return result;
+};
+
+//Write a function that given a floor in the american system
+//returns the floor in the european system.
+
+function getRealFloor(n) {
+  return n <= 0 ? n : n < 13 ? n - 1 : n - 2;
+}
+
+//Complete the function that takes a non-negative integer n as input,
+//and returns a list of all the powers of 2 with the exponent ranging from 0 to n ( inclusive ).
+
+function powersOfTwo(n) {
+  let arr = [];
+  for (i = 0; i <= n; i++) arr.push(2 ** i);
+  return arr;
+}
+
+//Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+
+function replace(s) {
+  return s.replace(/[aeiouAEIOU]/g, "!");
+}
+
+//human age, cat and dog age
+
+var humanYearsCatYearsDogYears = function (y) {
+  if (y == 1) return [1, 15, 15];
+  if (y == 2) return [2, 24, 24];
+  return [y, (y - 2) * 4 + 24, (y - 2) * 5 + 24];
+};
+
+//If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep".
+//Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!"
+//where N is the sheep's position in the queue. Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
+//Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
+
+function warnTheSheep(queue) {
+  let wolfPosition = queue.indexOf("wolf");
+  if (wolfPosition + 1 === queue.length)
+    return "Pls go away and stop eating my sheep";
+  else
+    return `Oi! Sheep number ${
+      queue.length - (wolfPosition + 1)
+    }! You are about to be eaten by a wolf!`;
+}
